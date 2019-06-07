@@ -16,7 +16,7 @@ module.exports = {
   ],
   author: {
     name: 'Vishal Kapur',
-    photo: '/photo.jpg',
+    photo: '/profile_photo.png',
     bio: 'Exploring new things. Previously: engineering @slackhq, co-founder/CTO @screenhero (acq by slack). Alum: MIT, YC. Co-founder of 2 kids.',
     contacts: {
       email: 'vishal.kapur@gmail.com',

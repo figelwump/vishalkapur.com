@@ -1,5 +1,5 @@
 ---
-title: "Why Choose Entrepreneurship"
+title: "Why choose entrepreneurship"
 date: "2019-05-02T22:02:40-07:00"
 template: "post"
 draft: false
