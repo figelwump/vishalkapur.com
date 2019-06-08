@@ -8,7 +8,7 @@ slug: "/posts/setting-up-self-hosted-blog-gatsby-render/"
 tags:
   - "Blogging"
   - "Gatsby"
-description: "It’s important to own what we create, including what we write. How I setup this site as a self-hosted blog that's easy to maintain, easy to use, and looks good."
+description: "It’s important to own what we create, including what we write. How I setup this site as a self-hosted blog that's easy to setup, easy to use, and free to operate."
 ---
 
 I’ve been mulling setting up a self-hosted blog for a while, but a recent [newsletter by Paul Jarvis](https://mailchi.mp/pjrvs/ownership-is-resistance?e=d5a9969448) finally convinced me. The gist: it’s important to own what we create, because ownership is a sort of resistance against external entities limiting our freedom by exploiting our data.
