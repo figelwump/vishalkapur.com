@@ -19,41 +19,67 @@ body {
 body {
   @apply font-sans antialiased;
   @apply flex flex-col;
-  @apply bg-stone-100 dark:bg-stone-900;
-  @apply text-black/50 dark:text-white/75;
+  @apply bg-cream-100 dark:bg-ink-900;
+  @apply text-ink-300 dark:text-cream-300;
+}
+
+/* Subtle grain texture overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+.dark body::before {
+  opacity: 0.04;
 }
 
 header {
-  @apply fixed top-0 left-0 right-0 z-50 py-5;
-  @apply bg-stone-100/75 dark:bg-stone-900/25;
-  @apply backdrop-blur-sm saturate-200;
+  @apply py-8 md:py-12;
 }
 
 main {
-  @apply flex-1 py-32;
+  @apply flex-1 pb-20;
 }
 
 footer {
-  @apply py-5 text-sm;
+  @apply py-8 text-sm;
 }
 
 article {
   @apply max-w-full prose dark:prose-invert prose-img:mx-auto prose-img:my-auto;
-  @apply prose-headings:font-semibold prose-p:font-serif;
-  @apply prose-headings:text-black prose-headings:dark:text-white;
+  @apply prose-p:font-serif prose-p:text-ink-400 dark:prose-p:text-cream-200;
+  @apply prose-headings:font-sans prose-headings:font-semibold prose-headings:tracking-tight;
+  @apply prose-headings:text-ink-600 prose-headings:dark:text-cream-50;
+  @apply prose-blockquote:border-terracotta/30;
+  @apply prose-strong:text-ink-500 dark:prose-strong:text-cream-100;
+  @apply prose-code:text-terracotta dark:prose-code:text-terracotta-light;
 }
 
 @layer utilities {
   article a {
-    @apply font-sans text-current underline underline-offset-2;
-    @apply decoration-black/15 dark:decoration-white/30;
+    @apply font-sans text-terracotta dark:text-terracotta-light;
+    @apply underline underline-offset-2 decoration-terracotta/30 dark:decoration-terracotta-light/30;
     @apply transition-colors duration-300 ease-in-out;
   }
   article a:hover {
-    @apply text-black dark:text-white;
-    @apply decoration-black/25 dark:decoration-white/50;
+    @apply text-terracotta-dark dark:text-terracotta-muted;
+    @apply decoration-terracotta/60 dark:decoration-terracotta-light/60;
   }
 }
+
+/* Staggered entrance animation */
+.stagger-1 { animation-delay: 0ms; }
+.stagger-2 { animation-delay: 80ms; }
+.stagger-3 { animation-delay: 160ms; }
+.stagger-4 { animation-delay: 240ms; }
+.stagger-5 { animation-delay: 320ms; }
 
 html #back-to-top {
   @apply opacity-0 pointer-events-none;

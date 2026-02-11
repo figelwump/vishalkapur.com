@@ -39,45 +39,54 @@ const projects: Project[] = [
 
 <PageLayout title={BLOG.TITLE} description={BLOG.DESCRIPTION}>
   <Container>
-    <div class="space-y-16">
-      <section class="prose max-w-none dark:prose-invert">
-        Some writings here. I also have some <a href="https://github.com/figelwump">open source projects</a> and say random things <a href="https://x.com/figelwump">on twitter</a>.
+    <div class="space-y-20">
+
+      <!-- Intro -->
+      <section class="opacity-0 animate-fade-in stagger-1">
+        <p class="text-sm leading-relaxed text-ink-300 dark:text-cream-300">
+          Some writings here. I also have some <a href="https://github.com/figelwump" class="text-terracotta dark:text-terracotta-light underline decoration-terracotta/25 dark:decoration-terracotta-light/25 underline-offset-2 hover:decoration-terracotta/50 dark:hover:decoration-terracotta-light/50 transition-colors duration-300">open source projects</a> and say random things <a href="https://x.com/figelwump" class="text-terracotta dark:text-terracotta-light underline decoration-terracotta/25 dark:decoration-terracotta-light/25 underline-offset-2 hover:decoration-terracotta/50 dark:hover:decoration-terracotta-light/50 transition-colors duration-300">on twitter</a>.
+        </p>
       </section>
 
-      <section class="space-y-6">
-        <div class="font-semibold text-black dark:text-white">
-          Projects
+      <!-- Projects -->
+      <section class="opacity-0 animate-fade-in stagger-2">
+        <div class="flex items-center gap-4 mb-6">
+          <h2 class="text-xs font-medium uppercase tracking-[0.15em] text-ink-100 dark:text-cream-300/40">
+            Projects
+          </h2>
+          <div class="flex-1 h-px bg-ink-100/15 dark:bg-cream-300/8"></div>
         </div>
-        <ul class="flex flex-col gap-4">
+        <div class="space-y-1">
           {projects.map((project) => (
-            <li>
-              <ProjectCard project={project} />
-            </li>
+            <ProjectCard project={project} />
           ))}
-        </ul>
+        </div>
       </section>
 
-      <section class="space-y-6">
-        <div class="font-semibold text-black dark:text-white">
-          Writing
+      <!-- Writing -->
+      <section class="opacity-0 animate-fade-in stagger-3">
+        <div class="flex items-center gap-4 mb-8">
+          <h2 class="text-xs font-medium uppercase tracking-[0.15em] text-ink-100 dark:text-cream-300/40">
+            Writing
+          </h2>
+          <div class="flex-1 h-px bg-ink-100/15 dark:bg-cream-300/8"></div>
         </div>
-        <div class="space-y-4">
+        <div class="space-y-10">
           {years.map(year => (
-            <section class="space-y-4">
-              <div class="text-sm text-black/50 dark:text-white/50">
+            <section>
+              <div class="text-xs font-medium text-ink-100/60 dark:text-cream-300/25 mb-3 tabular-nums">
                 {year}
               </div>
-              <ul class="flex flex-col gap-4">
+              <div class="space-y-0.5">
                 {posts[year].map((post) => (
-                  <li>
-                    <ArrowCard entry={post}/>
-                  </li>
+                  <ArrowCard entry={post}/>
                 ))}
-              </ul>
+              </div>
             </section>
           ))}
         </div>
       </section>
+
     </div>
   </Container>
 </PageLayout>

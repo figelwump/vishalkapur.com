@@ -7,22 +7,24 @@ type Props = {
 
 const { entry } = Astro.props;
 const href = entry.collection === 'blog' ? `/posts/${entry.slug}` : `/${entry.collection}/${entry.slug}`;
+
+const date = entry.data.date;
+const month = date.toLocaleDateString("en-us", { month: "short" });
+const year = date.getFullYear();
 ---
 
-<a href={href} class="relative group flex flex-nowrap py-3 px-4 pr-10 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
-  <div class="flex flex-col flex-1 truncate">
-    <div class="font-semibold">
-      {entry.data.title}
+<a href={href} class="group block py-3 -mx-3 px-3 rounded-lg hover:bg-ink-600/[0.03] dark:hover:bg-cream-50/[0.03] transition-colors duration-300">
+  <div class="flex items-start justify-between gap-4">
+    <div class="flex-1 min-w-0">
+      <div class="text-sm font-medium text-ink-500 dark:text-cream-100 group-hover:text-terracotta dark:group-hover:text-terracotta-light transition-colors duration-300">
+        {entry.data.title}
+      </div>
+      <div class="text-xs text-ink-200 dark:text-cream-300/60 mt-0.5 truncate">
+        {entry.data.description}
+      </div>
     </div>
-    <div class="text-sm">
-      {entry.data.description}
+    <div class="text-xs text-ink-100 dark:text-cream-300/40 whitespace-nowrap pt-0.5 tabular-nums">
+      {month} {year}
     </div>
   </div>
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    viewBox="0 0 24 24"
-    class="absolute top-1/2 right-2 -translate-y-1/2 size-5 stroke-2 fill-none stroke-current">
-    <line x1="5" y1="12" x2="19" y2="12" class="translate-x-3 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out" />
-    <polyline points="12 5 19 12 12 19" class="-translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out" />
-  </svg>
 </a>
