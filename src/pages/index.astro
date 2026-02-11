@@ -26,13 +26,21 @@ const posts = data.reduce((acc: Acc, post) => {
 
 const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a));
 
-// Add your projects here
 const projects: Project[] = [
   {
-    name: "vishalkapur.com",
-    description: "This website. Built with Astro, Tailwind CSS, and TypeScript.",
-    github: "https://github.com/figelwump/vishalkapur.com",
-    website: "https://vishalkapur.com",
+    name: "sv",
+    description: "simple secret vault",
+    github: "https://github.com/figelwump/sv",
+  },
+  {
+    name: "travel-agent",
+    description: "travel planning agent",
+    github: "https://github.com/figelwump/travel-agent",
+  },
+  {
+    name: "fin-agent",
+    description: "personal finance agent",
+    github: "https://github.com/figelwump/fin-agent",
   },
 ];
 ---
@@ -44,7 +52,7 @@ const projects: Project[] = [
       <!-- Intro -->
       <section class="opacity-0 animate-fade-in stagger-1">
         <p class="text-sm leading-relaxed text-ink-300 dark:text-cream-300">
-          Some writings here. I also have some <a href="https://github.com/figelwump" class="text-terracotta dark:text-terracotta-light underline decoration-terracotta/25 dark:decoration-terracotta-light/25 underline-offset-2 hover:decoration-terracotta/50 dark:hover:decoration-terracotta-light/50 transition-colors duration-300">open source projects</a> and say random things <a href="https://x.com/figelwump" class="text-terracotta dark:text-terracotta-light underline decoration-terracotta/25 dark:decoration-terracotta-light/25 underline-offset-2 hover:decoration-terracotta/50 dark:hover:decoration-terracotta-light/50 transition-colors duration-300">on twitter</a>.
+          Some writings here. I also have some <a href="https://github.com/figelwump" class="text-terracotta dark:text-terracotta-light underline decoration-terracotta/25 dark:decoration-terracotta-light/25 underline-offset-2 hover:decoration-terracotta/50 dark:hover:decoration-terracotta-light/50 transition-colors duration-300">open source projects</a> and say random things <a href="https://x.com/figelwump" class="text-terracotta dark:text-terracotta-light underline decoration-terracotta/25 dark:decoration-terracotta-light/25 underline-offset-2 hover:decoration-terracotta/50 dark:hover:decoration-terracotta-light/50 transition-colors duration-300">on x</a>.
         </p>
       </section>
 

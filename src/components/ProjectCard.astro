@@ -29,26 +29,9 @@ const primaryLink = project.website || project.github;
       {project.name}
     </span>
   )}
-  <div class="flex gap-3 text-xs ml-2">
-    {project.github && (
-      <a
-        href={project.github}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-ink-100 dark:text-cream-300/40 hover:text-terracotta dark:hover:text-terracotta-light transition-colors duration-300"
-      >
-        github
-      </a>
-    )}
-    {project.website && (
-      <a
-        href={project.website}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-ink-100 dark:text-cream-300/40 hover:text-terracotta dark:hover:text-terracotta-light transition-colors duration-300"
-      >
-        site
-      </a>
-    )}
-  </div>
+  {project.description && (
+    <span class="text-xs text-ink-100 dark:text-cream-300/40 ml-2">
+      {project.description}
+    </span>
+  )}
 </div>
