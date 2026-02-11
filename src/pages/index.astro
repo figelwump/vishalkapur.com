@@ -39,7 +39,7 @@ const projects: Project[] = [
 
 <PageLayout title={BLOG.TITLE} description={BLOG.DESCRIPTION}>
   <Container>
-    <div class="space-y-20">
+    <div class="space-y-14">
 
       <!-- Intro -->
       <section class="opacity-0 animate-fade-in stagger-1">
@@ -50,13 +50,13 @@ const projects: Project[] = [
 
       <!-- Projects -->
       <section class="opacity-0 animate-fade-in stagger-2">
-        <div class="flex items-center gap-4 mb-6">
+        <div class="flex items-center gap-4 mb-4">
           <h2 class="text-xs font-medium uppercase tracking-[0.15em] text-ink-100 dark:text-cream-300/40">
             Projects
           </h2>
           <div class="flex-1 h-px bg-ink-100/15 dark:bg-cream-300/8"></div>
         </div>
-        <div class="space-y-1">
+        <div>
           {projects.map((project) => (
             <ProjectCard project={project} />
           ))}
@@ -65,24 +65,15 @@ const projects: Project[] = [
 
       <!-- Writing -->
       <section class="opacity-0 animate-fade-in stagger-3">
-        <div class="flex items-center gap-4 mb-8">
+        <div class="flex items-center gap-4 mb-4">
           <h2 class="text-xs font-medium uppercase tracking-[0.15em] text-ink-100 dark:text-cream-300/40">
             Writing
           </h2>
           <div class="flex-1 h-px bg-ink-100/15 dark:bg-cream-300/8"></div>
         </div>
-        <div class="space-y-10">
-          {years.map(year => (
-            <section>
-              <div class="text-xs font-medium text-ink-100/60 dark:text-cream-300/25 mb-3 tabular-nums">
-                {year}
-              </div>
-              <div class="space-y-0.5">
-                {posts[year].map((post) => (
-                  <ArrowCard entry={post}/>
-                ))}
-              </div>
-            </section>
+        <div>
+          {data.map((post) => (
+            <ArrowCard entry={post}/>
           ))}
         </div>
       </section>
